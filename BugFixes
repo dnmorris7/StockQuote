@@ -1,0 +1,9 @@
+BUG FIX: 1/31/15
+Problem: Failure to properly iniastilze first screen with proper layout.
+Solution: stocksScrollView and stocksTableScrollView are two distinct, decoupled elements within the .xml that needed to be separated.
+		  I tightly coupled the two together when I erroneously thought that the naming wouldn't matter in this case. stocksTableScroll 
+		  is a tableLayout that MUST be separate from the component its nested beneath.
+
+
+Problem: Hitting the quote button failed to initialize StockInfoActivity.class.
+Solution: Every Activity must be declared in the manifest.
